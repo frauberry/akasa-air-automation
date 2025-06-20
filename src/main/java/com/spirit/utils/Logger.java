@@ -1,4 +1,4 @@
-package com.regent.utils;
+package com.spirit.utils;
 
 import com.aventstack.extentreports.*;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
@@ -9,11 +9,10 @@ import org.openqa.selenium.*;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import static com.regent.utils.DriverWeb.getDriver;
+import static com.spirit.utils.DriverWeb.getDriver;
 
 
 public class Logger extends Assertions {

@@ -1,8 +1,8 @@
-package com.regent.website;
+package com.spirit.website;
 
 import org.openqa.selenium.By;
 
-import static com.regent.utils.DriverWeb.*;
+import static com.spirit.utils.DriverWeb.*;
 
 public class HomePage {
 

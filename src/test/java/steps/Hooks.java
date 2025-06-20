@@ -1,10 +1,10 @@
 package steps;
 
-import com.regent.utils.Logger;
+import com.spirit.utils.Logger;
 import io.cucumber.java.Before;
 import io.cucumber.java.After;
 import io.cucumber.java.Scenario;
-import com.regent.utils.DriverWeb;
+import com.spirit.utils.DriverWeb;
 
 public class Hooks {
 

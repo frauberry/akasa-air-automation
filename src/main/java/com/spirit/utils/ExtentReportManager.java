@@ -1,4 +1,4 @@
-package com.regent.utils;
+package com.spirit.utils;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;

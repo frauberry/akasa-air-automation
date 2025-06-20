@@ -1,4 +1,4 @@
-package com.regent.utils;
+package com.spirit.utils;
 
 
 import java.util.Collection;
@@ -6,9 +6,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import org.testng.Assert;
 
-import com.aventstack.extentreports.Status;
-
-import static com.regent.utils.Logger.info;
+import static com.spirit.utils.Logger.info;
 
 public abstract class Assertions {
 
