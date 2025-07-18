@@ -4,6 +4,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -147,5 +148,16 @@ public class DriverWeb {
             driver.remove();
         }
         System.out.println("WebDriver closed after the scenario.");
+    }
+
+    public static void hoverElement(By by) {
+        Actions actions = new Actions(getDriver());
+        actions.moveToElement(getDriver().findElement(by)).perform();
+    }
+
+    public static void sleep(int sec){
+        try{
+            Thread.sleep(sec * 1000);
+        }catch (InterruptedException ex){}
     }
 }
