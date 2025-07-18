@@ -1,5 +1,6 @@
 package com.spirit.website;
 
+import com.spirit.utils.User;
 import org.openqa.selenium.By;
 
 import static com.spirit.utils.DriverWeb.*;
@@ -20,36 +21,52 @@ public class HomePage {
     By confirmPassword = By.xpath("//input[@name='confirmPassword']");
     By confirmSignInButton = By.xpath("//button[text()='Confirm & Sign In']");
     By accountName = By.xpath("//span[text()='Tita Rita']");
+    By signInWithPassword = By.xpath("//button[text()='Sign in with password']");
+    By emailId = By.xpath("//input[@name='emailOrMobile']");
+    By signInPassword = By.id("password");
+    By signInButton = By.xpath("//button[text()='Sign In']");
+
 
     public void enterCredentials() {
+        User user = new User();
         hoverElement(loginButton);
 //        getDriver().findElement(loginButton).click();
         getDriver().findElement(customerLogin).click();
         getDriver().findElement(signUpButton).click();
-        getDriver().findElement(firstName).sendKeys("Tita");
-        getDriver().findElement(lastName).sendKeys("Rita");
+        getDriver().findElement(firstName).sendKeys(user.firstName);
+        getDriver().findElement(lastName).sendKeys(user.lastName);
         getDriver().findElement(gender).click();
         getDriver().findElement(genderFemale).click();
         getDriver().findElement(dateOfBirth).click();
-        getDriver().findElement(dateOfBirth).sendKeys("01N1974");
-        getDriver().findElement(emailAddress).sendKeys("test89899@gmail.com");
-        getDriver().findElement(phoneNumber).sendKeys("1112345678");
+        getDriver().findElement(dateOfBirth).sendKeys(user.dateOfBirth);
+        getDriver().findElement(emailAddress).sendKeys(user.email);
+        System.out.println(user.email);
+        getDriver().findElement(phoneNumber).sendKeys(user.phoneNumber);
         getDriver().findElement(submitButton).click();
         waitForElementToBeVisible(password,5);
-        getDriver().findElement(password).sendKeys("Spirit1!");
+        getDriver().findElement(password).sendKeys(user.password);
 //        waitForElementToBeClickable(confirmPassword,5);
         sleep(2);
-        getDriver().findElement(confirmPassword).sendKeys("Spirit1!");
+        getDriver().findElement(confirmPassword).sendKeys(user.password);
 
 
     }
 
-    public void signIn () {
+    public void confirmAndSignIn() {
         getDriver().findElement(confirmSignInButton).click();
     }
 
     public boolean isAccountNameDisplayed () {
         waitForElementToBeVisible(accountName,10);
         return getDriver().findElement(accountName).isDisplayed();
+    }
+
+    public void signIn() {
+        hoverElement(loginButton);
+        getDriver().findElement(customerLogin).click();
+        getDriver().findElement(signInWithPassword).click();
+        getDriver().findElement(emailId).sendKeys("Rita_5620195072025_94@gmail.com");
+        getDriver().findElement(signInPassword).sendKeys("Spirit1!");
+        getDriver().findElement(signInButton).click();
     }
 }
