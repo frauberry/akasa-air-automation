@@ -1,7 +1,12 @@
 Feature: Homepage testing
 
-  Scenario: Member successfully signs in
-    Given Member is on Homepage
-    When Member enters valid credentials
-    And Member signs in
-    Then Member should be successfully signed in
+  Scenario: User successfully creates a new account
+    Given User is on Homepage
+    When User enters valid credentials
+    And User signs in
+    Then User should be successfully signed in
+
+    Scenario: Member logs in
+      Given User is on Homepage
+      When User signs in with password
+      Then User should be successfully signed in
