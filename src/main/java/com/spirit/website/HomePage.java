@@ -65,6 +65,7 @@ public class HomePage {
         hoverElement(loginButton);
         getDriver().findElement(customerLogin).click();
         getDriver().findElement(signInWithPassword).click();
+        sleep(1);
         getDriver().findElement(emailId).sendKeys("Rita_5620195072025_94@gmail.com");
         getDriver().findElement(signInPassword).sendKeys("Spirit1!");
         getDriver().findElement(signInButton).click();
