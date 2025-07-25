@@ -75,4 +75,18 @@ public class StepDefinitions {
         SavedTravelers savedTravelers = new SavedTravelers();
         Assert.assertTrue(savedTravelers.isTravelersNameDisplayed());
     }
+
+    @When("User fills out Search form")
+    public void userFillsOutSearchForm() {
+        Logger.setWhenStep("User fills out Search form");
+        HomePage homePage = new HomePage();
+        homePage.fillOutSearch();
+    }
+
+    @Then("Flight Search result should be displayed")
+    public void flightSearchResultShouldBeDisplayed() {
+        Logger.setThenStep("Flight Search result should be displayed");
+        HomePage homePage = new HomePage();
+        Assert.assertTrue(homePage.isFlightResultDisplayed());
+    }
 }
