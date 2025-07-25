@@ -25,6 +25,16 @@ public class HomePage {
     By emailId = By.xpath("//input[@name='emailOrMobile']");
     By signInPassword = By.id("password");
     By signInButton = By.xpath("//button[text()='Sign In']");
+    By fromField = By.id("From");
+    By fromBomOption = By.xpath("//span[text()='BOM']");
+    By toField = By.id("To");
+    By toAuhOption = By.xpath("//span[text()='AUH']");
+    By returnTrip = By.xpath("//input[@name='returnDate']");
+    By returnDate = By.xpath("//div[not(@aria-disabled='true')]/div[text()='5']");
+    By searchFlightsButton = By.xpath("//button[text()='Search Flights']");
+    By flightResultBom = By.xpath("//p[contains(text(),'BOM')]");
+    By flightResultAuh = By.xpath("//p[contains(text(),'AUH')]");
+
 
 
     public void enterCredentials() {
@@ -69,5 +79,23 @@ public class HomePage {
         getDriver().findElement(emailId).sendKeys("Rita_5620195072025_94@gmail.com");
         getDriver().findElement(signInPassword).sendKeys("Spirit1!");
         getDriver().findElement(signInButton).click();
+    }
+
+    public void fillOutSearch() {
+        scrollToElementMinusPx(fromField, 200);
+        getDriver().findElement(fromField).click();
+        waitForElementToBeClickable(fromBomOption,10);
+        getDriver().findElement(fromBomOption).click();
+        getDriver().findElement(toField).click();
+        getDriver().findElement(toAuhOption).click();
+        getDriver().findElement(returnTrip).click();
+        getDriver().findElement(returnDate).click();
+        getDriver().findElement(searchFlightsButton).click();
+    }
+
+    public boolean isFlightResultDisplayed() {
+        waitForElementToBeClickable(flightResultBom,15);
+        return getDriver().findElement(flightResultBom).isDisplayed() &&
+                getDriver().findElement(flightResultAuh).isDisplayed();
     }
 }
