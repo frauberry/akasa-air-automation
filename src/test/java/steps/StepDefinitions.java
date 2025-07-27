@@ -89,4 +89,28 @@ public class StepDefinitions {
         HomePage homePage = new HomePage();
         Assert.assertTrue(homePage.isFlightResultDisplayed());
     }
+
+    @Given("Member is on Profile page")
+    public void memberIsOnProfilePage() {
+        Logger.setGivenStep("Member is on Profile page");
+        getDriver().get("https://www.akasaair.com/");
+        HomePage homePage = new HomePage();
+        homePage.signIn();
+        Profile profile = new Profile();
+        profile.navigateToManageProfile();
+    }
+
+    @When("Member logs out")
+    public void memberLogsOut() {
+        Logger.setWhenStep("Member logs out");
+        Profile profile = new Profile();
+        profile.logout();
+    }
+
+    @Then("Member should be redirected to the Homepage")
+    public void memberShouldBeRedirectedToTheHomepage() {
+        Logger.setThenStep("Member should be redirected to the Homepage");
+        HomePage homePage = new HomePage();
+        Assert.assertTrue(homePage.isLoginButtonDisplayed());
+    }
 }
