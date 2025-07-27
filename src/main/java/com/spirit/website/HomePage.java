@@ -35,8 +35,6 @@ public class HomePage {
     By flightResultBom = By.xpath("//p[contains(text(),'BOM')]");
     By flightResultAuh = By.xpath("//p[contains(text(),'AUH')]");
 
-
-
     public void enterCredentials() {
         User user = new User();
         hoverElement(loginButton);
@@ -58,8 +56,6 @@ public class HomePage {
 //        waitForElementToBeClickable(confirmPassword,5);
         sleep(2);
         getDriver().findElement(confirmPassword).sendKeys(user.password);
-
-
     }
 
     public void confirmAndSignIn() {
@@ -97,5 +93,10 @@ public class HomePage {
         waitForElementToBeClickable(flightResultBom,15);
         return getDriver().findElement(flightResultBom).isDisplayed() &&
                 getDriver().findElement(flightResultAuh).isDisplayed();
+    }
+
+    public boolean isLoginButtonDisplayed() {
+        waitForElementToBeVisible(loginButton, 5);
+        return getDriver().findElement(loginButton).isDisplayed();
     }
 }
