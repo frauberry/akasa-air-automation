@@ -1,10 +1,10 @@
 package steps;
 
-import com.spirit.utils.Logger;
+import com.akasaAir.utils.Logger;
 import io.cucumber.java.Before;
 import io.cucumber.java.After;
 import io.cucumber.java.Scenario;
-import com.spirit.utils.DriverWeb;
+import com.akasaAir.utils.DriverWeb;
 
 public class Hooks {
 

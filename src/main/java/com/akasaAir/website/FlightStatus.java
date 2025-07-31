@@ -1,10 +1,9 @@
-package com.spirit.website;
+package com.akasaAir.website;
 
 import org.openqa.selenium.By;
-import org.testng.Assert;
 
-import static com.spirit.utils.DriverWeb.getDriver;
-import static com.spirit.utils.DriverWeb.waitForElementToBeVisible;
+import static com.akasaAir.utils.DriverWeb.getDriver;
+import static com.akasaAir.utils.DriverWeb.waitForElementToBeVisible;
 
 public class FlightStatus {
     By flightNumber = By.id("flightNumber");

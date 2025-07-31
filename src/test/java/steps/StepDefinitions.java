@@ -1,17 +1,17 @@
 package steps;
 
-import com.spirit.website.FlightStatus;
-import com.spirit.website.HomePage;
-import com.spirit.website.Profile;
-import com.spirit.website.SavedTravelers;
+import com.akasaAir.website.FlightStatus;
+import com.akasaAir.website.HomePage;
+import com.akasaAir.website.Profile;
+import com.akasaAir.website.SavedTravelers;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
-import com.spirit.utils.Logger;
+import com.akasaAir.utils.Logger;
 import org.testng.Assert;
 
-import static com.spirit.utils.DriverWeb.getDriver;
+import static com.akasaAir.utils.DriverWeb.getDriver;
 
 public class StepDefinitions {
     @Given("User is on Homepage")

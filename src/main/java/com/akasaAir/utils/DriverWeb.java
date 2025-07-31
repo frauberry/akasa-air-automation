@@ -1,4 +1,4 @@
-package com.spirit.utils;
+package com.akasaAir.utils;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
@@ -110,6 +110,14 @@ public class DriverWeb {
         WebElement element = getDriver().findElement(by);
         JavascriptExecutor js = (JavascriptExecutor) getDriver();
         js.executeScript("arguments[0].scrollIntoView(true);", element);
+        System.out.println("Scrolled to element: " + element);
+    }
+
+    public static void scrollToElementMinusPx(By by, int minusPx) {
+        WebElement element = getDriver().findElement(by);
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        js.executeScript("arguments[0].scrollIntoView(true); " +
+                "window.scrollBy(0, -" + minusPx + ");", element);
         System.out.println("Scrolled to element: " + element);
     }
 

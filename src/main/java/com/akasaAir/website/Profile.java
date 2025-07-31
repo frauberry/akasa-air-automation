@@ -1,8 +1,8 @@
-package com.spirit.website;
+package com.akasaAir.website;
 
 import org.openqa.selenium.By;
 
-import static com.spirit.utils.DriverWeb.*;
+import static com.akasaAir.utils.DriverWeb.*;
 
 public class Profile {
     By loginButton = By.xpath("//li[@aria-label='Login']");

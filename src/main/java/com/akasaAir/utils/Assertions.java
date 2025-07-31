@@ -1,4 +1,4 @@
-package com.spirit.utils;
+package com.akasaAir.utils;
 
 
 import java.util.Collection;
@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import org.testng.Assert;
 
-import static com.spirit.utils.Logger.info;
+import static com.akasaAir.utils.Logger.info;
 
 public abstract class Assertions {
 
