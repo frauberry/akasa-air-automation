@@ -1,9 +1,8 @@
-package com.spirit.website;
+package com.akasaAir.website;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 
-import static com.spirit.utils.DriverWeb.*;
+import static com.akasaAir.utils.DriverWeb.*;
 
 public class SavedTravelers {
     By addTravelerButton = By.xpath("//button[text()='Add Traveller']");

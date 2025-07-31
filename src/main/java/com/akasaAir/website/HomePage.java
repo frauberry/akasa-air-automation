@@ -1,9 +1,9 @@
-package com.spirit.website;
+package com.akasaAir.website;
 
-import com.spirit.utils.User;
+import com.akasaAir.utils.User;
 import org.openqa.selenium.By;
 
-import static com.spirit.utils.DriverWeb.*;
+import static com.akasaAir.utils.DriverWeb.*;
 
 public class HomePage {
     By loginButton = By.xpath("//button[text()='Login']");

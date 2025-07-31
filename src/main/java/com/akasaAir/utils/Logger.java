@@ -1,4 +1,4 @@
-package com.spirit.utils;
+package com.akasaAir.utils;
 
 import com.aventstack.extentreports.*;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
@@ -12,7 +12,7 @@ import java.nio.file.Files;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import static com.spirit.utils.DriverWeb.getDriver;
+import static com.akasaAir.utils.DriverWeb.getDriver;
 
 
 public class Logger extends Assertions {

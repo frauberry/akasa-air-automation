@@ -1,4 +1,4 @@
-package com.spirit.utils;
+package com.akasaAir.utils;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
