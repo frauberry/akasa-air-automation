@@ -1,5 +1,6 @@
 package steps;
 
+import com.spirit.website.FlightStatus;
 import com.spirit.website.HomePage;
 import com.spirit.website.Profile;
 import com.spirit.website.SavedTravelers;
@@ -112,5 +113,25 @@ public class StepDefinitions {
         Logger.setThenStep("Member should be redirected to the Homepage");
         HomePage homePage = new HomePage();
         Assert.assertTrue(homePage.isLoginButtonDisplayed());
+    }
+
+    @Given("Guest is on Flight Status page")
+    public void guestIsOnFlightStatusPage() {
+        Logger.setGivenStep("Guest is on Flight Status page");
+        getDriver().get("https://www.akasaair.com/manage-booking/flight-status");
+    }
+
+    @When("Guest fills out Flight Status form")
+    public void guestFillsOutFlightStatusForm() {
+        Logger.setWhenStep("Guest fills out Flight Status form");
+        FlightStatus flightStatus = new FlightStatus();
+        flightStatus.fillOutForm();
+    }
+
+    @Then("The flight should be found")
+    public void theFlightShouldBeFound() {
+        Logger.setThenStep("The flight should be found");
+        FlightStatus flightStatus = new FlightStatus();
+        Assert.assertTrue(flightStatus.isFlightResultDisplayed());
     }
 }
