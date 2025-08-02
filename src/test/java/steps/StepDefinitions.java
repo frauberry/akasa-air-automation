@@ -1,9 +1,6 @@
 package steps;
 
-import com.akasaAir.website.FlightStatus;
-import com.akasaAir.website.HomePage;
-import com.akasaAir.website.Profile;
-import com.akasaAir.website.SavedTravelers;
+import com.akasaAir.website.*;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
@@ -133,5 +130,30 @@ public class StepDefinitions {
         Logger.setThenStep("The flight should be found");
         FlightStatus flightStatus = new FlightStatus();
         Assert.assertTrue(flightStatus.isFlightResultDisplayed());
+    }
+
+    @Given("Guest is on Flight Search page")
+    public void guestIsOnFlightSearchPage() {
+        Logger.setGivenStep("Guest is on Flight Search page");
+        getDriver().get("https://www.akasaair.com");
+        HomePage homePage = new HomePage();
+        homePage.fillOutSearch();
+    }
+
+    @When("Guest opens Privacy Policy")
+    public void guestOpensPrivacyPolicy() {
+        Logger.setWhenStep("Guest opens Privacy Policy");
+        FlightSearch flightSearch = new FlightSearch();
+        flightSearch.selectOutboundFlight();
+        flightSearch.proceedWithContinue();
+        flightSearch.selectNoThanks();
+        flightSearch.openPrivacyPolicy();
+    }
+
+    @Then("Privacy Policy should be open in the new tab")
+    public void privacyPolicyShouldBeOpenInTheNewTab() {
+        Logger.setThenStep("Privacy Policy should be open in the new tab");
+        FlightSearch flightSearch = new FlightSearch();
+        Assert.assertTrue(flightSearch.isPrivacyPolicyOpenInNewTab());
     }
 }

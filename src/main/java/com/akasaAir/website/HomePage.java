@@ -1,5 +1,6 @@
 package com.akasaAir.website;
 
+import com.akasaAir.utils.DateAndTime;
 import com.akasaAir.utils.User;
 import org.openqa.selenium.By;
 
@@ -30,7 +31,10 @@ public class HomePage {
     By toField = By.id("To");
     By toAuhOption = By.xpath("//span[text()='AUH']");
     By returnTrip = By.xpath("//input[@name='returnDate']");
-    By returnDate = By.xpath("//div[not(@aria-disabled='true')]/div[text()='5']");
+    By departDate = By.xpath("//input[@name='DepartureDate']");
+    String departDateOption = "//div[not(@aria-disabled='true')]/div[text()='%s']";
+    String returnDate = "//div[not(@aria-disabled='true')][contains(text(),'%s')]";
+//    By returnDate = By.xpath("(//div[not(@aria-disabled='true')]/div[@aria-label='day-block'][contains(text(),'15')])[first()]");
     By searchFlightsButton = By.xpath("//button[text()='Search Flights']");
     By flightResultBom = By.xpath("//p[contains(text(),'BOM')]");
     By flightResultAuh = By.xpath("//p[contains(text(),'AUH')]");
@@ -38,7 +42,6 @@ public class HomePage {
     public void enterCredentials() {
         User user = new User();
         hoverElement(loginButton);
-//        getDriver().findElement(loginButton).click();
         getDriver().findElement(customerLogin).click();
         getDriver().findElement(signUpButton).click();
         getDriver().findElement(firstName).sendKeys(user.firstName);
@@ -84,8 +87,10 @@ public class HomePage {
         getDriver().findElement(fromBomOption).click();
         getDriver().findElement(toField).click();
         getDriver().findElement(toAuhOption).click();
+        getDriver().findElement(departDate).click();
+        getDriver().findElement(By.xpath(String.format(departDateOption, DateAndTime.getFutureDay(10)))).click();
         getDriver().findElement(returnTrip).click();
-        getDriver().findElement(returnDate).click();
+        getDriver().findElement(By.xpath(String.format(returnDate, DateAndTime.getFutureDay(15)))).click();
         getDriver().findElement(searchFlightsButton).click();
     }
 
